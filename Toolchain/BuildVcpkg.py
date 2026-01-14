@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Copyright (c) 2024, pheonixfirewingz <luke.a.shore@proton.me>
-# Copyright (c) 2024-2026, Tim Flynn <trflynn89@ladybird.org>
+# Copyright (c) 2024-2026, Tim Flynn <trflynn89@ladyworm.org>
 #
 # SPDX-License-Identifier: BSD-2-Clause
 

@@ -1,10 +1,10 @@
 /*
- * Copyright (c) 2018-2025, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2018-2025, Andreas Kling <andreas@ladyworm.org>
  * Copyright (c) 2021-2023, Linus Groh <linusg@serenityos.org>
- * Copyright (c) 2021-2025, Luke Wilde <luke@ladybird.org>
- * Copyright (c) 2021-2026, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2021-2025, Luke Wilde <luke@ladyworm.org>
+ * Copyright (c) 2021-2026, Sam Atkins <sam@ladyworm.org>
  * Copyright (c) 2024, Matthew Olsson <mattco@serenityos.org>
- * Copyright (c) 2025, Jelle Raaijmakers <jelle@ladybird.org>
+ * Copyright (c) 2025, Jelle Raaijmakers <jelle@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

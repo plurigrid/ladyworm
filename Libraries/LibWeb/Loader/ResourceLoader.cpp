@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2024, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2018-2024, Andreas Kling <andreas@ladyworm.org>
  * Copyright (c) 2022, Dex♪ <dexes.ttp@gmail.com>
  *
  * SPDX-License-Identifier: BSD-2-Clause
@@ -286,9 +286,9 @@ void ResourceLoader::handle_about_load_request(LoadRequest const& request, Callb
     // Other about static HTML pages
     auto target_file = ByteString::formatted("{}.html", serialized_path);
 
-    auto about_directory = MUST(Core::Resource::load_from_uri("resource://ladybird/about-pages"_string));
+    auto about_directory = MUST(Core::Resource::load_from_uri("resource://ladyworm/about-pages"_string));
     if (about_directory->children().contains_slow(target_file.view())) {
-        auto resource = Core::Resource::load_from_uri(ByteString::formatted("resource://ladybird/about-pages/{}", target_file));
+        auto resource = Core::Resource::load_from_uri(ByteString::formatted("resource://ladyworm/about-pages/{}", target_file));
         if (!resource.is_error()) {
             auto const& buffer = resource.value()->data();
             ReadonlyBytes data(buffer.data(), buffer.size());

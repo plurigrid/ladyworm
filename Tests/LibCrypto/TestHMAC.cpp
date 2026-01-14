@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, the Ladybird developers.
+ * Copyright (c) 2021, the Ladyworm developers.
  * Copyright (c) 2025, Altomani Gianluca <altomanigianluca@gmail.com>
  *
  * SPDX-License-Identifier: BSD-2-Clause

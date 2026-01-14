@@ -5,9 +5,9 @@ add_library(ladybird_impl STATIC
     Interface/Autocomplete.mm
     Interface/Event.mm
     Interface/InfoBar.mm
-    Interface/LadybirdWebView.mm
-    Interface/LadybirdWebViewBridge.cpp
-    Interface/LadybirdWebViewWindow.mm
+    Interface/LadywormWebView.mm
+    Interface/LadywormWebViewBridge.cpp
+    Interface/LadywormWebViewWindow.mm
     Interface/Menu.mm
     Interface/Palette.mm
     Interface/SearchPanel.mm

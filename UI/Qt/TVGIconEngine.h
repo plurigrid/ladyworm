@@ -13,7 +13,7 @@
 
 #include <QIconEngine>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 class TVGIconEngine : public QIconEngine {
 public:

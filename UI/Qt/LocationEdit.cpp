@@ -17,7 +17,7 @@
 #include <QTextLayout>
 #include <QTimer>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 LocationEdit::LocationEdit(QWidget* parent)
     : QLineEdit(parent)

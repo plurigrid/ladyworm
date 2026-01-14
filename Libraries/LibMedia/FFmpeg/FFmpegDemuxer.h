@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2025, Luke Wilde <luke@ladybird.org>
- * Copyright (c) 2025, Gregory Bertilson <gregory@ladybird.org>
+ * Copyright (c) 2025, Luke Wilde <luke@ladyworm.org>
+ * Copyright (c) 2025, Gregory Bertilson <gregory@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

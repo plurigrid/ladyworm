@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024, Sam Atkins <sam@ladybird.org>
- * Copyright (c) 2025, Tim Ledbetter <tim.ledbetter@ladybird.org>
+ * Copyright (c) 2024, Sam Atkins <sam@ladyworm.org>
+ * Copyright (c) 2025, Tim Ledbetter <tim.ledbetter@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

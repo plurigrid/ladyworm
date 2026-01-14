@@ -37,13 +37,13 @@ public:
 Application::Application() = default;
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_serenityos_ladybird_LadybirdActivity_initNativeCode(JNIEnv*, jobject, jstring, jstring, jobject, jstring);
+Java_org_serenityos_ladyworm_LadywormActivity_initNativeCode(JNIEnv*, jobject, jstring, jstring, jobject, jstring);
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_serenityos_ladybird_LadybirdActivity_initNativeCode(JNIEnv* env, jobject thiz, jstring resource_dir, jstring tag_name, jobject timer_service, jstring user_dir)
+Java_org_serenityos_ladyworm_LadywormActivity_initNativeCode(JNIEnv* env, jobject thiz, jstring resource_dir, jstring tag_name, jobject timer_service, jstring user_dir)
 {
     char const* raw_resource_dir = env->GetStringUTFChars(resource_dir, nullptr);
-    WebView::s_ladybird_resource_root = raw_resource_dir;
+    WebView::s_ladyworm_resource_root = raw_resource_dir;
     env->ReleaseStringUTFChars(resource_dir, raw_resource_dir);
 
     // While setting XDG environment variables in order to store user data may seem silly
@@ -57,9 +57,9 @@ Java_org_serenityos_ladybird_LadybirdActivity_initNativeCode(JNIEnv* env, jobjec
     AK::set_log_tag_name(raw_tag_name);
     env->ReleaseStringUTFChars(tag_name, raw_tag_name);
 
-    dbgln("Set resource dir to {}", WebView::s_ladybird_resource_root);
+    dbgln("Set resource dir to {}", WebView::s_ladyworm_resource_root);
 
-    auto file_or_error = Core::System::open(MUST(String::formatted("{}/res/icons/48x48/app-browser.png", WebView::s_ladybird_resource_root)), O_RDONLY);
+    auto file_or_error = Core::System::open(MUST(String::formatted("{}/res/icons/48x48/app-browser.png", WebView::s_ladyworm_resource_root)), O_RDONLY);
     if (file_or_error.is_error()) {
         dbgln("No resource files, perhaps extracting went wrong?");
     } else {
@@ -79,9 +79,9 @@ Java_org_serenityos_ladybird_LadybirdActivity_initNativeCode(JNIEnv* env, jobjec
 
     jobject timer_service_ref = env->NewGlobalRef(timer_service);
 
-    auto* event_loop_manager = new Ladybird::ALooperEventLoopManager(timer_service_ref);
+    auto* event_loop_manager = new Ladyworm::ALooperEventLoopManager(timer_service_ref);
     event_loop_manager->on_did_post_event = [] {
-        Ladybird::JavaEnvironment env(global_vm);
+        Ladyworm::JavaEnvironment env(global_vm);
         env.get()->CallVoidMethod(s_java_instance, s_schedule_event_loop_method);
     };
     Core::EventLoopManager::install(*event_loop_manager);
@@ -91,7 +91,7 @@ Java_org_serenityos_ladybird_LadybirdActivity_initNativeCode(JNIEnv* env, jobjec
     Main::Arguments arguments = {
         .argc = 0,
         .argv = nullptr,
-        .strings = Span<StringView> { new StringView("ladybird"sv), 1 }
+        .strings = Span<StringView> { new StringView("ladyworm"sv), 1 }
     };
 
     // FIXME: We are not making use of this Application object to track our processes.
@@ -101,10 +101,10 @@ Java_org_serenityos_ladybird_LadybirdActivity_initNativeCode(JNIEnv* env, jobjec
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_serenityos_ladybird_LadybirdActivity_execMainEventLoop(JNIEnv*, jobject /* thiz */);
+Java_org_serenityos_ladyworm_LadywormActivity_execMainEventLoop(JNIEnv*, jobject /* thiz */);
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_serenityos_ladybird_LadybirdActivity_execMainEventLoop(JNIEnv*, jobject /* thiz */)
+Java_org_serenityos_ladyworm_LadywormActivity_execMainEventLoop(JNIEnv*, jobject /* thiz */)
 {
     if (s_main_event_loop) {
         s_main_event_loop->pump(Core::EventLoop::WaitMode::PollForEvents);
@@ -112,10 +112,10 @@ Java_org_serenityos_ladybird_LadybirdActivity_execMainEventLoop(JNIEnv*, jobject
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_serenityos_ladybird_LadybirdActivity_disposeNativeCode(JNIEnv*, jobject /* thiz */);
+Java_org_serenityos_ladyworm_LadywormActivity_disposeNativeCode(JNIEnv*, jobject /* thiz */);
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_serenityos_ladybird_LadybirdActivity_disposeNativeCode(JNIEnv* env, jobject /* thiz */)
+Java_org_serenityos_ladyworm_LadywormActivity_disposeNativeCode(JNIEnv* env, jobject /* thiz */)
 {
     s_main_event_loop = nullptr;
     s_schedule_event_loop_method = nullptr;

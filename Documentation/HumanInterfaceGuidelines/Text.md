@@ -1,8 +1,8 @@
-# Guidelines for user interface text in Ladybird
+# Guidelines for user interface text in Ladyworm
 
 ## Capitalization
 
-Ladybird employs two capitalization styles:
+Ladyworm employs two capitalization styles:
 
 - Book title capitalization
 - Sentence-style capitalization

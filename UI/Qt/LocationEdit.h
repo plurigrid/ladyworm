@@ -11,7 +11,7 @@
 
 #include <QLineEdit>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 class Autocomplete;
 

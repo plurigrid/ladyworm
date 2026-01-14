@@ -1,14 +1,14 @@
 # Ladyworm
 
-**Ladyworm** is a proof-of-neural-operator browser fork based on [Ladybird](https://ladybird.org).
+**Ladyworm** is a proof-of-neural-operator browser fork based on [Ladyworm](https://ladybird.org).
 
 > [!NOTE]
-> Ladyworm extends Ladybird with neural-operator capabilities, WebGPU acceleration, and Jank (Clojure-LLVM) scripting.
+> Ladyworm extends Ladyworm with neural-operator capabilities, WebGPU acceleration, and Jank (Clojure-LLVM) scripting.
 > This is an experimental fork by [Plurigrid](https://plurigrid.xyz).
 
 ## Upstream
 
-This project is a fork of the [Ladybird Web Browser](https://github.com/LadybirdBrowser/ladybird), a truly independent browser using a novel engine based on web standards.
+This project is a fork of the [Ladyworm Web Browser](https://github.com/LadywormBrowser/ladybird), a truly independent browser using a novel engine based on web standards.
 
 ## Ladyworm Extensions
 
@@ -18,9 +18,9 @@ This project is a fork of the [Ladybird Web Browser](https://github.com/Ladybird
 
 ## Features
 
-We inherit Ladybird's goal to build a complete, usable browser for the modern web.
+We inherit Ladyworm's goal to build a complete, usable browser for the modern web.
 
-Ladybird uses a multi-process architecture with a main UI process, several WebContent renderer processes,
+Ladyworm uses a multi-process architecture with a main UI process, several WebContent renderer processes,
 an ImageDecoder process, and a RequestServer process.
 
 Image decoding and network connections are done out of process to be more robust against malicious content.
@@ -41,9 +41,9 @@ At the moment, many core library support components are inherited from SerenityO
 
 ## How do I build and run this?
 
-See [build instructions](Documentation/BuildInstructionsLadybird.md) for information on how to build Ladybird.
+See [build instructions](Documentation/BuildInstructionsLadyworm.md) for information on how to build Ladyworm.
 
-Ladybird runs on Linux, macOS, Windows (with WSL2), and many other \*Nixes.
+Ladyworm runs on Linux, macOS, Windows (with WSL2), and many other \*Nixes.
 
 ## How do I read the documentation?
 
@@ -53,7 +53,7 @@ Code-related documentation can be found in the [documentation](Documentation/) f
 
 Join [our Discord server](https://discord.gg/nvfjVJ4Svh) to participate in development discussion.
 
-Please read [Getting started contributing](Documentation/GettingStartedContributing.md) if you plan to contribute to Ladybird for the first time.
+Please read [Getting started contributing](Documentation/GettingStartedContributing.md) if you plan to contribute to Ladyworm for the first time.
 
 Before opening an issue, please see the [issue policy](CONTRIBUTING.md#issue-policy) and the [detailed issue-reporting guidelines](ISSUES.md).
 
@@ -61,4 +61,4 @@ The full contribution guidelines can be found in [`CONTRIBUTING.md`](CONTRIBUTIN
 
 ## License
 
-Ladybird is licensed under a 2-clause BSD license.
+Ladyworm is licensed under a 2-clause BSD license.

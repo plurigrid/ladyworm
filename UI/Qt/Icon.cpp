@@ -11,7 +11,7 @@
 
 #include <QPalette>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 QIcon load_icon_from_uri(StringView uri)
 {

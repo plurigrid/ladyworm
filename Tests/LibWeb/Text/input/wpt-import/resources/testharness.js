@@ -11,8 +11,8 @@
         // Assume we are running tests if the internals object is exposed.
         output: !(window.internals && window.internals.headless),
         harness_timeout:{
-            "normal":150000, // NOTE: Overridden for Ladybird due to slow GCC CI
-            "long":300000 // NOTE: Overridden for Ladybird due to slow GCC CI
+            "normal":150000, // NOTE: Overridden for Ladyworm due to slow GCC CI
+            "long":300000 // NOTE: Overridden for Ladyworm due to slow GCC CI
         },
         test_timeout:null,
         message_events: ["start", "test_state", "result", "completion"],
@@ -4808,7 +4808,7 @@
 
     const get_stack = function() {
         if (window.internals && window.internals.headless) {
-            return "(Stack traces disabled in Ladybird test mode)";
+            return "(Stack traces disabled in Ladyworm test mode)";
         }
 
         var stack = new Error().stack;
@@ -4857,7 +4857,7 @@
 
     function make_message(function_name, description, error, substitutions)
     {
-        // NOTE: If we're running in Ladybird test mode, just return "!" as the error string.
+        // NOTE: If we're running in Ladyworm test mode, just return "!" as the error string.
         //       This is to keep tests running quickly. You can open the test in the browser
         //       to see a more detailed error message.
         if (window.internals) {

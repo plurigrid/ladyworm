@@ -7,7 +7,7 @@
 #include <UI/Qt/EventLoopImplementationQt.h>
 #include <UI/Qt/EventLoopImplementationQtEventTarget.h>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 bool EventLoopImplementationQtEventTarget::event(QEvent* event)
 {

@@ -21,13 +21,13 @@ tasks.named("preBuild").dependsOn("buildLagomTools")
 tasks.named("prepareKotlinBuildScriptModel").dependsOn("buildLagomTools")
 
 android {
-    namespace = "org.serenityos.ladybird"
+    namespace = "org.plurigrid.ladyworm"
     compileSdk = 35
     // FIXME: Replace the NDK version to a stable one (this is r29 beta 2)
     ndkVersion = "29.0.13599879"
 
     defaultConfig {
-        applicationId = "org.serenityos.ladybird"
+        applicationId = "org.plurigrid.ladyworm"
         minSdk = 30
         targetSdk = 35
         versionCode = 1

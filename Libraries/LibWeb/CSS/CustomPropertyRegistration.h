@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026, Sam Atkins <sam@ladybird.org>
+ * Copyright (c) 2026, Sam Atkins <sam@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

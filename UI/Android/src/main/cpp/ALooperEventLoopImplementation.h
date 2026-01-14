@@ -15,7 +15,7 @@
 
 extern "C" struct ALooper;
 
-namespace Ladybird {
+namespace Ladyworm {
 
 class ALooperEventLoopManager : public Core::EventLoopManager {
 public:

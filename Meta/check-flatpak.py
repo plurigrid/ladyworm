@@ -16,8 +16,8 @@ VCPKG = "vcpkg.json"
 VCPKG_OVERLAYS_PORTS = "Meta/CMake/vcpkg/overlay-ports/*"
 VCPKG_URL = "https://github.com/microsoft/vcpkg.git"
 VCPKG_REPO = "Build/vcpkg"
-FLATPAK_MANIFEST = "Meta/CMake/flatpak/org.ladybird.Ladybird.json"
-SELF = "Ladybird"
+FLATPAK_MANIFEST = "Meta/CMake/flatpak/org.plurigrid.Ladyworm.json"
+SELF = "Ladyworm"
 
 # List of build tools that are not provided by the Flatpak SDK and therefore in the manifest
 # For a vcpkg build these are installed on the host system

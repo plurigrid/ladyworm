@@ -15,7 +15,7 @@ target_sources(ladybird PRIVATE
     TabBar.cpp
     TVGIconEngine.cpp
     WebContentView.cpp
-    ladybird.qrc
+    ladyworm.qrc
 )
 target_link_libraries(ladybird PRIVATE Qt::Core Qt::Gui Qt::Widgets)
 create_ladybird_bundle(ladybird)

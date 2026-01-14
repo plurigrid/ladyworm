@@ -15,7 +15,7 @@
 #include <QSettings>
 #include <QSize>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 class Settings : public QObject {
     Q_OBJECT

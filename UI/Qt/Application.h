@@ -13,7 +13,7 @@
 
 #include <QApplication>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 class Application : public WebView::Application {
     WEB_VIEW_APPLICATION(Application)

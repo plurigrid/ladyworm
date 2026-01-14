@@ -1,4 +1,4 @@
-# Testing Ladybird
+# Testing Ladyworm
 
 Tests are located in `Tests/`, with a directory for each library.
 
@@ -11,10 +11,10 @@ Tests of internal C++ code go in their own `TestFoo.cpp` file in `Tests/LibWeb`.
 > [!NOTE]
 > To reproduce a CI failure, see the section on [Running with Sanitizers](#running-with-sanitizers).
 
-The easiest way to run tests is to use the `ladybird.py` script. The LibWeb tests are registered with CMake as a test in
-`UI/CMakeLists.txt`. Using the built-in test filtering, you can run all tests with `Meta/ladybird.py test` or run
-just the LibWeb tests with `Meta/ladybird.py test LibWeb`. The second way is to invoke the `test-web` test runner
-directly with `Meta/ladybird.py run test-web`.
+The easiest way to run tests is to use the `ladyworm.py` script. The LibWeb tests are registered with CMake as a test in
+`UI/CMakeLists.txt`. Using the built-in test filtering, you can run all tests with `Meta/ladyworm.py test` or run
+just the LibWeb tests with `Meta/ladyworm.py test LibWeb`. The second way is to invoke the `test-web` test runner
+directly with `Meta/ladyworm.py run test-web`.
 
 A third way is to invoke `ctest` directly. The simplest method is to use the `Release` preset from `CMakePresets.json`:
 
@@ -24,10 +24,10 @@ cmake --build --preset Release
 ctest --preset Release
 ```
 
-Note that some tests require the `LADYBIRD_SOURCE_DIR` environment variable to be set to the root of the ladybird source tree.
+Note that some tests require the `LADYBIRD_SOURCE_DIR` environment variable to be set to the root of the ladyworm source tree.
 
 ```sh
-# /path/to/ladybird repository
+# /path/to/ladyworm repository
 export LADYBIRD_SOURCE_DIR=${PWD}
 ```
 
@@ -103,8 +103,8 @@ git checkout my-css-change
 
 ### Importing Web Platform Tests
 
-You can import certain Web Platform Tests (WPT) tests into your Ladybird clone (if they're tests of type that can be
-imported - and especially if any code changes you're making cause Ladybird to pass any WPT tests it hasn't yet been
+You can import certain Web Platform Tests (WPT) tests into your Ladyworm clone (if they're tests of type that can be
+imported - and especially if any code changes you're making cause Ladyworm to pass any WPT tests it hasn't yet been
 passing). Here's how:
 
 ```sh
@@ -135,14 +135,14 @@ you will need to regenerate the corresponding expectations file to match the act
 For Text or Layout tests, you can "rebaseline" the tests to regenerate the expectation file:
 
 ```bash
-./Meta/ladybird.py run test-web --rebaseline -f Text/input/your-new-test-name.html
+./Meta/ladyworm.py run test-web --rebaseline -f Text/input/your-new-test-name.html
 ```
 
 For Ref and Screenshot tests, you will need to supply the equivalently rendering HTML manually. Though for Screenshot
-tests, you can generate the reference screenshot itself by running Ladybird in headless mode:
+tests, you can generate the reference screenshot itself by running Ladyworm in headless mode:
 
 ```bash
-./Meta/ladybird.py run ladybird --headless --layout-test-mode Tests/LibWeb/Screenshot/input/your-new-test-name.html
+./Meta/ladyworm.py run ladyworm --headless --layout-test-mode Tests/LibWeb/Screenshot/input/your-new-test-name.html
 
 # This will log something like: "Saved screenshot to: ~/Downloads/screenshot-2025-06-07-08-37-45.png"
 

@@ -1,12 +1,12 @@
 # Neovim Project Configuration
 
-There are two documented ways to support clangd in Neovim for the Ladybird
+There are two documented ways to support clangd in Neovim for the Ladyworm
 project:
 
 1. With [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) (assumes existing setup)
 2. With [coc.nvim](https://github.com/neoclide/coc.nvim) (from scratch, potentially out of date)
 
-For both setups, make sure you ran `./Meta/ladybird.py run ladybird` at least
+For both setups, make sure you ran `./Meta/ladyworm.py run ladyworm` at least
 once.
 
 ## With nvim-lspconfig
@@ -26,7 +26,7 @@ require('lspconfig').clangd.setup {
   -- capabilities = ...,
 
   -- If you have another clangd installation, put it here. Note that we use
-  -- clangd version 18 for the Ladybird project.
+  -- clangd version 18 for the Ladyworm project.
   -- cmd = { '/path/to/clangd' },
 }
 ```

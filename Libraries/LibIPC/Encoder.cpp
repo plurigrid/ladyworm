@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2020, Andreas Kling <andreas@ladybird.org>
+ * Copyright (c) 2020, Andreas Kling <andreas@ladyworm.org>
  * Copyright (c) 2021, kleines Filmröllchen <filmroellchen@serenityos.org>
- * Copyright (c) 2023-2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2023-2025, Tim Flynn <trflynn89@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

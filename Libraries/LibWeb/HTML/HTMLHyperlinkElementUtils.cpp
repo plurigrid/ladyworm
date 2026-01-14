@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2021, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2024-2025, Shannon Booth <shannon@ladybird.org>
+ * Copyright (c) 2021, Andreas Kling <andreas@ladyworm.org>
+ * Copyright (c) 2024-2025, Shannon Booth <shannon@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

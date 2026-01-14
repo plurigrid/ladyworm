@@ -116,7 +116,7 @@ target_link_libraries(TestUtf16String PRIVATE LibUnicode)
 
 if (ENABLE_SWIFT)
 
-    # FIXME: Convert to use swift-testing after resolving https://github.com/LadybirdBrowser/ladybird/issues/1201
+    # FIXME: Convert to use swift-testing after resolving https://github.com/LadywormBrowser/ladybird/issues/1201
     add_executable(TestAKBindings TestAKBindings.swift)
     target_link_libraries(TestAKBindings PRIVATE AK)
     target_compile_options(TestAKBindings PRIVATE -parse-as-library)

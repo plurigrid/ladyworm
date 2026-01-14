@@ -1,14 +1,14 @@
-module Ladybird [system] {
+module Ladyworm [system] {
     requires cplusplus
     requires objc_arc
 
     explicit module WebView {
-        header "Interface/LadybirdWebView.h"
+        header "Interface/LadywormWebView.h"
         export *
     }
 
     explicit module WebViewWindow {
-        header "Interface/LadybirdWebViewWindow.h"
+        header "Interface/LadywormWebViewWindow.h"
         export *
     }
 

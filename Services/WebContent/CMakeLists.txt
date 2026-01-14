@@ -16,7 +16,7 @@ if (ANDROID)
     add_library(webcontentservice SHARED
         ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/WebContentService.cpp
         ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/WebContentServiceJNI.cpp
-        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/LadybirdServiceBaseJNI.cpp
+        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/LadywormServiceBaseJNI.cpp
         ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/JNIHelpers.cpp
         ${SOURCES}
     )

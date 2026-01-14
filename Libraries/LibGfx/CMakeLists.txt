@@ -144,7 +144,7 @@ if (NOT ANDROID)
     pkg_check_modules(Jxl REQUIRED IMPORTED_TARGET libjxl)
     if (WIN32)
         # FIXME: Build vcpkg libraries with clang-cl so they can also build in sanitize.
-        # https://github.com/LadybirdBrowser/ladybird/issues/5224
+        # https://github.com/LadywormBrowser/ladybird/issues/5224
         if (ENABLE_WINDOWS_CI)
             # We have to disable ASAN for the full target as fixing the issue in the initial SkiaBackendContext.cpp TU
             #  alone causes transitive issues in other TUs that depend on it

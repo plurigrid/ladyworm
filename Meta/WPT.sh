@@ -42,7 +42,7 @@ sudo_and_ask() {
 
 default_binary_path() {
     if [ "$(uname -s)" = "Darwin" ]; then
-        echo "${BUILD_DIR}/bin/Ladybird.app/Contents/MacOS"
+        echo "${BUILD_DIR}/bin/Ladyworm.app/Contents/MacOS"
     else
         echo "${BUILD_DIR}/bin"
     fi
@@ -73,7 +73,7 @@ ensure_run_dir() {
     echo "$runpath/merged"
 }
 
-LADYBIRD_BINARY=${LADYBIRD_BINARY:-"$(default_binary_path)/Ladybird"}
+LADYBIRD_BINARY=${LADYBIRD_BINARY:-"$(default_binary_path)/Ladyworm"}
 WEBDRIVER_BINARY=${WEBDRIVER_BINARY:-"$(default_binary_path)/WebDriver"}
 TEST_WEB_BINARY=${TEST_WEB_BINARY:-"${BUILD_DIR}/bin/test-web"}
 WPT_PROCESSES=${WPT_PROCESSES:-$(get_number_of_processing_units)}
@@ -154,9 +154,9 @@ print_help() {
       $NAME compare --log results.log expectations.log css/CSS2
           Run the Web Platform Tests in the 'css/CSS2' directory, comparing the results to the expectations in expectations.log; output the results to results.log.
       $NAME import html/dom/aria-attribute-reflection.html
-          Import the test from https://wpt.live/html/dom/aria-attribute-reflection.html into the Ladybird test suite.
+          Import the test from https://wpt.live/html/dom/aria-attribute-reflection.html into the Ladyworm test suite.
       $NAME import --force html/dom/aria-attribute-reflection.html
-          Import the test from https://wpt.live/html/dom/aria-attribute-reflection.html into the Ladybird test suite, redownloading any files that already exist.
+          Import the test from https://wpt.live/html/dom/aria-attribute-reflection.html into the Ladyworm test suite, redownloading any files that already exist.
       $NAME list-tests css/CSS2 dom
           Show a list of all tests in the 'css/CSS2' and 'dom' directories.
 EOF
@@ -245,7 +245,7 @@ ensure_wpt_repository() {
 }
 
 build_ladybird_and_webdriver() {
-    "${LADYBIRD_SOURCE_DIR}"/Meta/ladybird.py build WebDriver
+    "${LADYBIRD_SOURCE_DIR}"/Meta/ladyworm.py build WebDriver
 }
 
 update_wpt() {
@@ -596,7 +596,7 @@ bisect_wpt()
 
     local bad="$1"; shift
     local good="$1"; shift
-    # Commits from before ladybird.py was added don't currently work with this script
+    # Commits from before ladyworm.py was added don't currently work with this script
     OLDEST_COMMIT_ALLOWED="061a7f766ce"
 
     if ! git rev-parse --verify "${bad}" >/dev/null 2>&1; then
@@ -610,7 +610,7 @@ bisect_wpt()
     fi
 
     if ! git merge-base --is-ancestor ${OLDEST_COMMIT_ALLOWED} "${good}"; then
-        echo "Commits older than ${OLDEST_COMMIT_ALLOWED} aren't allowed (because ladybird.py is required)."
+        echo "Commits older than ${OLDEST_COMMIT_ALLOWED} aren't allowed (because ladyworm.py is required)."
         exit 1
     fi
 
@@ -721,7 +721,7 @@ import_wpt()
     done < <(printf "%s\n" "${RAW_TESTS[@]}" | sort -u)
 
     pushd "${LADYBIRD_SOURCE_DIR}" > /dev/null
-        ./Meta/ladybird.py build test-web
+        ./Meta/ladyworm.py build test-web
         trap 'exit 1' EXIT INT TERM
         for path in "${TESTS[@]}"; do
             echo "Importing test from ${path}"

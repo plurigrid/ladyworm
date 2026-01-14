@@ -15,7 +15,7 @@ project(
 if (${ENABLE_LAGOM_LADYBIRD} OR $CACHE{ENABLE_LAGOM_LADYBIRD})
     message(FATAL_ERROR
         "The ENABLE_LAGOM_LADYBIRD option is no longer supported.\n"
-        "Please use the top-level CMakeLists.txt to enable Ladybird builds.\n")
+        "Please use the top-level CMakeLists.txt to enable Ladyworm builds.\n")
 endif()
 
 # This is required for CMake (when invoked for a Lagom-only build) to
@@ -58,7 +58,7 @@ endif()
 
 find_package(Threads REQUIRED)
 # FIXME: This global link libraries is required to workaround linker issues (on some systems)
-# from the Ladybird import. See https://github.com/SerenityOS/serenity/issues/16847
+# from the Ladyworm import. See https://github.com/SerenityOS/serenity/issues/16847
 link_libraries(Threads::Threads)
 
 if (ENABLE_LAGOM_CCACHE)

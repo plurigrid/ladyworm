@@ -9,7 +9,7 @@ set(SOURCES
 if (ANDROID)
     add_library(imagedecoderservice SHARED
         ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/ImageDecoderService.cpp
-        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/LadybirdServiceBaseJNI.cpp
+        ${LADYBIRD_SOURCE_DIR}/UI/Android/src/main/cpp/LadywormServiceBaseJNI.cpp
         ${SOURCES}
     )
     target_link_libraries(imagedecoderservice PRIVATE LibWebView)

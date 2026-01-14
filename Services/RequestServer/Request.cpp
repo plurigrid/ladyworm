@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024, Andreas Kling <andreas@ladybird.org>
- * Copyright (c) 2025, Tim Flynn <trflynn89@ladybird.org>
+ * Copyright (c) 2024, Andreas Kling <andreas@ladyworm.org>
+ * Copyright (c) 2025, Tim Flynn <trflynn89@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

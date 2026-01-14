@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-2-Clause
  */
 
-#include <Interface/LadybirdWebViewBridge.h>
+#include <Interface/LadywormWebViewBridge.h>
 #include <LibGfx/Font/FontDatabase.h>
 #include <LibGfx/Rect.h>
 #include <LibIPC/File.h>
@@ -12,7 +12,7 @@
 
 #import <Interface/Palette.h>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 template<typename T>
 static T scale_for_device(T size, double device_pixel_ratio)

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Jelle Raaijmakers <jelle@ladybird.org>
+ * Copyright (c) 2021, Jelle Raaijmakers <jelle@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

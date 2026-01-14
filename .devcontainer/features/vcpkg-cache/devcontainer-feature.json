@@ -1,9 +1,9 @@
 {
-    "name": "Caches Ladybird's vcpkg dependencies",
+    "name": "Caches Ladyworm's vcpkg dependencies",
     "id": "vcpkg-cache",
     "version": "1.0.0",
-    "description": "Create a prebuilt vcpkg binary cache for Ladybird developer use",
-    "installsAfter": [ "./features/ladybird" ],
+    "description": "Create a prebuilt vcpkg binary cache for Ladyworm developer use",
+    "installsAfter": [ "./features/ladyworm" ],
     "containerEnv": {
         "VCPKG_BINARY_SOURCES": ";files,/usr/local/share/vcpkg-binary-cache,read"
     },

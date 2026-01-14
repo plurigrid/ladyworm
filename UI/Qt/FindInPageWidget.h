@@ -15,7 +15,7 @@
 #include <QPushButton>
 #include <QWidget>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 class Tab;
 class WebContentView;

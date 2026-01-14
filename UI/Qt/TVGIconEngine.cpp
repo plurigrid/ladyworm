@@ -15,7 +15,7 @@
 #include <QPainter>
 #include <QPixmapCache>
 
-namespace Ladybird {
+namespace Ladyworm {
 
 void TVGIconEngine::paint(QPainter* qpainter, QRect const& rect, QIcon::Mode mode, QIcon::State state)
 {

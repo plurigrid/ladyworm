@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024, Jelle Raaijmakers <jelle@ladybird.org>
- * Copyright (c) 2025, Gregory Bertilson <gregory@ladybird.org>
+ * Copyright (c) 2024, Jelle Raaijmakers <jelle@ladyworm.org>
+ * Copyright (c) 2025, Gregory Bertilson <gregory@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

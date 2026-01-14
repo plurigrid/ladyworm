@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2025, Shannon Booth <shannon@serenityos.org>
- * Copyright (c) 2025, Jelle Raaijmakers <jelle@ladybird.org>
+ * Copyright (c) 2025, Jelle Raaijmakers <jelle@ladyworm.org>
  *
  * SPDX-License-Identifier: BSD-2-Clause
  */

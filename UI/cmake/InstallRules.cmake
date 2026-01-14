@@ -2,74 +2,74 @@
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
-set(package Ladybird)
+set(package Ladyworm)
 
-set(ladybird_applications ladybird ${ladybird_helper_processes})
+set(ladyworm_applications ladyworm ${ladyworm_helper_processes})
 
-set(app_install_targets ${ladybird_applications})
+set(app_install_targets ${ladyworm_applications})
 
-install(TARGETS ladybird
-  EXPORT ladybirdTargets
+install(TARGETS ladyworm
+  EXPORT ladywormTargets
   RUNTIME
-    COMPONENT ladybird_Runtime
+    COMPONENT ladyworm_Runtime
     DESTINATION ${CMAKE_INSTALL_BINDIR}
   BUNDLE
-    COMPONENT ladybird_Runtime
+    COMPONENT ladyworm_Runtime
     DESTINATION bundle
   LIBRARY
-    COMPONENT ladybird_Runtime
-    NAMELINK_COMPONENT ladybird_Development
+    COMPONENT ladyworm_Runtime
+    NAMELINK_COMPONENT ladyworm_Development
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
   FILE_SET browser
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-  FILE_SET ladybird
+  FILE_SET ladyworm
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-install(TARGETS ${ladybird_helper_processes}
-  EXPORT ladybirdTargets
+install(TARGETS ${ladyworm_helper_processes}
+  EXPORT ladywormTargets
   RUNTIME
-    COMPONENT ladybird_Runtime
+    COMPONENT ladyworm_Runtime
     DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}
 )
 
 include("${LADYBIRD_SOURCE_DIR}/Meta/Lagom/get_linked_lagom_libraries.cmake")
-foreach (application IN LISTS ladybird_applications)
+foreach (application IN LISTS ladyworm_applications)
   get_linked_lagom_libraries("${application}" "${application}_lagom_libraries")
   list(APPEND all_required_lagom_libraries "${${application}_lagom_libraries}")
 endforeach()
 list(REMOVE_DUPLICATES all_required_lagom_libraries)
 
-# Remove ladybird shlib if it exists
-list(REMOVE_ITEM all_required_lagom_libraries ladybird)
+# Remove ladyworm shlib if it exists
+list(REMOVE_ITEM all_required_lagom_libraries ladyworm)
 
 if (APPLE)
     # Fixup the app bundle and copy:
-    #   - Libraries from lib/ to Ladybird.app/Contents/lib
+    #   - Libraries from lib/ to Ladyworm.app/Contents/lib
     # Remove the symlink we created at build time for the lib directory first
     install(CODE "
-    file(REMOVE \${CMAKE_INSTALL_PREFIX}/bundle/Ladybird.app/Contents/lib)
+    file(REMOVE \${CMAKE_INSTALL_PREFIX}/bundle/Ladyworm.app/Contents/lib)
     set(lib_dir \${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
     if (IS_ABSOLUTE ${CMAKE_INSTALL_LIBDIR})
       set(lib_dir ${CMAKE_INSTALL_LIBDIR})
     endif()
 
-    set(contents_dir \${CMAKE_INSTALL_PREFIX}/bundle/Ladybird.app/Contents)
+    set(contents_dir \${CMAKE_INSTALL_PREFIX}/bundle/Ladyworm.app/Contents)
     file(COPY \${lib_dir} DESTINATION \${contents_dir})
   "
-            COMPONENT ladybird_Runtime)
+            COMPONENT ladyworm_Runtime)
 endif()
 
 install(TARGETS ${all_required_lagom_libraries}
-  EXPORT ladybirdTargets
-  COMPONENT ladybird_Runtime
+  EXPORT ladywormTargets
+  COMPONENT ladyworm_Runtime
   LIBRARY
-    COMPONENT ladybird_Runtime
-    NAMELINK_COMPONENT ladybird_Development
+    COMPONENT ladyworm_Runtime
+    NAMELINK_COMPONENT ladyworm_Development
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
   FILE_SET server
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-  FILE_SET ladybird
+  FILE_SET ladyworm
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
@@ -80,34 +80,34 @@ write_basic_package_version_file(
 
 # Allow package maintainers to freely override the path for the configs
 set(
-    ladybird_INSTALL_CMAKEDIR "${CMAKE_INSTALL_DATADIR}/${package}"
+    ladyworm_INSTALL_CMAKEDIR "${CMAKE_INSTALL_DATADIR}/${package}"
     CACHE PATH "CMake package config location relative to the install prefix"
 )
-mark_as_advanced(ladybird_INSTALL_CMAKEDIR)
+mark_as_advanced(ladyworm_INSTALL_CMAKEDIR)
 
 install(
-    FILES cmake/LadybirdInstallConfig.cmake
-    DESTINATION "${ladybird_INSTALL_CMAKEDIR}"
+    FILES cmake/LadywormInstallConfig.cmake
+    DESTINATION "${ladyworm_INSTALL_CMAKEDIR}"
     RENAME "${package}Config.cmake"
-    COMPONENT ladybird_Development
+    COMPONENT ladyworm_Development
 )
 
 install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/${package}ConfigVersion.cmake"
-    DESTINATION "${ladybird_INSTALL_CMAKEDIR}"
-    COMPONENT ladybird_Development
+    DESTINATION "${ladyworm_INSTALL_CMAKEDIR}"
+    COMPONENT ladyworm_Development
 )
 
 install(
-    EXPORT ladybirdTargets
-    NAMESPACE ladybird::
-    DESTINATION "${ladybird_INSTALL_CMAKEDIR}"
-    COMPONENT ladybird_Development
+    EXPORT ladywormTargets
+    NAMESPACE ladyworm::
+    DESTINATION "${ladyworm_INSTALL_CMAKEDIR}"
+    COMPONENT ladyworm_Development
 )
 
 if (NOT APPLE)
     # On macOS the resources are handled via the MACOSX_PACKAGE_LOCATION property on each resource file
-    install_ladybird_resources("${CMAKE_INSTALL_DATADIR}/Lagom" ladybird_Runtime)
+    install_ladyworm_resources("${CMAKE_INSTALL_DATADIR}/Lagom" ladyworm_Runtime)
 endif()
 
 if (ENABLE_INSTALL_FREEDESKTOP_FILES)
@@ -119,25 +119,25 @@ if (ENABLE_INSTALL_FREEDESKTOP_FILES)
         OUTPUT_VARIABLE GIT_HASH
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
-    configure_file("${FREEDESKTOP_RESOURCE_DIR}/org.ladybird.Ladybird.metainfo.xml.in" "${CMAKE_CURRENT_BINARY_DIR}/org.ladybird.Ladybird.metainfo.xml" @ONLY)
+    configure_file("${FREEDESKTOP_RESOURCE_DIR}/org.plurigrid.Ladyworm.metainfo.xml.in" "${CMAKE_CURRENT_BINARY_DIR}/org.plurigrid.Ladyworm.metainfo.xml" @ONLY)
     install(FILES
-        "${FREEDESKTOP_RESOURCE_DIR}/org.ladybird.Ladybird.svg"
+        "${FREEDESKTOP_RESOURCE_DIR}/org.plurigrid.Ladyworm.svg"
         DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps"
-        COMPONENT ladybird_Runtime
+        COMPONENT ladyworm_Runtime
     )
     install(FILES
-        "${FREEDESKTOP_RESOURCE_DIR}/org.ladybird.Ladybird.desktop"
+        "${FREEDESKTOP_RESOURCE_DIR}/org.plurigrid.Ladyworm.desktop"
         DESTINATION "${CMAKE_INSTALL_DATADIR}/applications"
-        COMPONENT ladybird_Runtime
+        COMPONENT ladyworm_Runtime
     )
     install(FILES
-        "${FREEDESKTOP_RESOURCE_DIR}/org.ladybird.Ladybird.service"
+        "${FREEDESKTOP_RESOURCE_DIR}/org.plurigrid.Ladyworm.service"
         DESTINATION "${CMAKE_INSTALL_DATADIR}/dbus-1/services"
-        COMPONENT ladybird_Runtime
+        COMPONENT ladyworm_Runtime
     )
     install(FILES
-        "${CMAKE_CURRENT_BINARY_DIR}/org.ladybird.Ladybird.metainfo.xml"
+        "${CMAKE_CURRENT_BINARY_DIR}/org.plurigrid.Ladyworm.metainfo.xml"
         DESTINATION "${CMAKE_INSTALL_DATADIR}/metainfo"
-        COMPONENT ladybird_Runtime
+        COMPONENT ladyworm_Runtime
     )
 endif()
