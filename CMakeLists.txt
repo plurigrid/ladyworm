@@ -20,18 +20,18 @@ endif()
 
 # Pass additional information to vcpkg toolchain files if we are using vcpkg.
 if (CMAKE_TOOLCHAIN_FILE MATCHES "vcpkg.cmake$")
-    set(CMAKE_PROJECT_ladybird_INCLUDE_BEFORE "Meta/CMake/vcpkg/generate_vcpkg_toolchain_variables.cmake")
+    set(CMAKE_PROJECT_ladyworm_INCLUDE_BEFORE "Meta/CMake/vcpkg/generate_vcpkg_toolchain_variables.cmake")
 endif()
 
 if (APPLE AND NOT CMAKE_OSX_SYSROOT)
     set(CMAKE_OSX_SYSROOT macosx)
 endif()
 
-project(ladybird
+project(ladyworm
         VERSION 0.1.0
         LANGUAGES C CXX
-        DESCRIPTION "Ladybird Web Browser"
-        HOMEPAGE_URL "https://ladybird.org"
+        DESCRIPTION "Ladyworm Neural Browser - proof-of-neural-operator"
+        HOMEPAGE_URL "https://github.com/plurigrid/ladyworm"
 )
 
 if (ANDROID OR IOS)

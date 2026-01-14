@@ -1,14 +1,24 @@
-# Ladybird
+# Ladyworm
 
-[Ladybird](https://ladybird.org) is a truly independent web browser, using a novel engine based on web standards.
+**Ladyworm** is a proof-of-neural-operator browser fork based on [Ladybird](https://ladybird.org).
 
-> [!IMPORTANT]
-> Ladybird is in a pre-alpha state, and only suitable for use by developers
->
+> [!NOTE]
+> Ladyworm extends Ladybird with neural-operator capabilities, WebGPU acceleration, and Jank (Clojure-LLVM) scripting.
+> This is an experimental fork by [Plurigrid](https://plurigrid.xyz).
+
+## Upstream
+
+This project is a fork of the [Ladybird Web Browser](https://github.com/LadybirdBrowser/ladybird), a truly independent browser using a novel engine based on web standards.
+
+## Ladyworm Extensions
+
+- **Neural-Operator**: Proof-of-concept neural page prediction
+- **WebGPU**: GPU-accelerated rendering pipeline (wormhole)
+- **Jank**: Clojure dialect for browser scripting via LLVM
 
 ## Features
 
-We aim to build a complete, usable browser for the modern web.
+We inherit Ladybird's goal to build a complete, usable browser for the modern web.
 
 Ladybird uses a multi-process architecture with a main UI process, several WebContent renderer processes,
 an ImageDecoder process, and a RequestServer process.
