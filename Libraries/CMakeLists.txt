@@ -25,6 +25,7 @@ if (ENABLE_GUI_TARGETS)
     add_subdirectory(LibGfx)
     add_subdirectory(LibImageDecoderClient)
     add_subdirectory(LibMedia)
+    add_subdirectory(LibNeural)  # Ladyworm neural-operator extension
     add_subdirectory(LibWeb)
     add_subdirectory(LibWebView)
 endif()
